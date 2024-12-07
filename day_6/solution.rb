@@ -1,5 +1,6 @@
 require_relative "./helpers"
 
+start_time = Time.now
 
 map = Map.new("./input.txt")
 
@@ -16,10 +17,13 @@ for row in 0 .. map.height - 1
             end
             if gaurd.cycle_detected
                 cycles += 1
-                puts "Number of cycles #{cycles}"
             end
         end
     end
 end
 
 print cycles
+
+end_time = Time.now
+duration = end_time - start_time
+puts "Script took #{duration} seconds to execute."

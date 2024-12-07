@@ -31,7 +31,6 @@ class Map
     def place_obsticle(coordinate)
         row, column = coordinate
         if !coordinate_is_obsticle(coordinate) && !coordinate_is_gaurd(coordinate)
-            puts "\n\nPlacing obsticle at #{row}, #{column}"
             @map[row][column] = "#"
         else
             return false
@@ -102,7 +101,6 @@ class Gaurd
         elsif !map.coordinate_is_out_of_bounds([row, column]) && map.coordinate_is_obsticle([row, column])
             turn
         else
-            puts "Out of bounds at #{row}, #{column}"
             @positions_moved.push(@current_position)
             @out_of_bounds=true
         end
